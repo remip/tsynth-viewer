@@ -1,0 +1,66 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="js/pureknob.js"></script>
+    <script type="text/javascript" src="js/presets.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <style type="text/css">
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:  #f0f3f4;
+}
+#tsynth {
+    background-image: url( 'img/tsynth.png');
+    width: 1208px;
+    height: 556px;
+    position: absolute;
+} 
+#parameters {
+    width: auto;
+    margin: 0 0 0 0;
+    top: 600px;
+    position: absolute;
+}
+.label {
+    color: #88ff88;
+    font-size: 75%;
+    text-align: center;
+    width: 50px;
+    padding-top: 22px;
+}
+
+    </style>
+</head>
+<body>
+    <h3>TSynth preset viewer</h3>
+    
+    <form>
+        Preset: <select id="presets"></select>
+    </form>
+    
+    <div id="tsynth"></div>
+    <table id="parameters" class="display">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Parameter</th>
+            <th>Value</th>
+        </tr>
+        </thead>
+        <tbody></tbody>    
+    </table>
+</body>
+
+<script type="text/javascript">
+
+window.onload = function() {
+    init_presets();
+    init_table();
+    loadpreset(0);   
+};
+</script>
+
+</html>
